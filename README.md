@@ -1,7 +1,33 @@
-# Vue 3 + Vite
+# Which Star Trek Captain Are You?
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A silly quiz to find out which Star Trek captain you're most like
 
-## Recommended IDE Setup
+## Table of contents
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+- [General info](#general-info)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Status](#status)
+
+## General info
+
+TBC
+
+## Screenshots
+
+TBC
+
+## Technologies
+
+- Vue
+- Vite
+- Others TBC
+
+## Setup
+
+TBC
+
+## Status
+
+Project is: _in progress_

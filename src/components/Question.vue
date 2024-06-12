@@ -1,11 +1,15 @@
 <script setup>
-/* import { ref } from 'vue' */
+import { ref } from 'vue'
 import Answer from './Answer.vue'
 
 const props = defineProps({
   question: String,
   answers: Array
 })
+
+const emit = defineEmits(['captaincountupdate'])
+
+const currentAnswer = ref(0)
 
 // For the answers, we have the text we want to display
 // but we also need it to have no spaces or capitals
@@ -14,32 +18,29 @@ function createID(string) {
   return string.replace(/ /g, '-').toLowerCase()
 }
 
-/* const count = ref(0) */
+function updateAnswer(val) {
+  currentAnswer.value = val
+}
+
+function saveData() {
+  // Update the captain count
+  emit('captaincountupdate', currentAnswer.value)
+}
 </script>
 
 <template>
-  <!--<h1>{{ msg }}</h1>-->
-
   <form>
     <p>{{ props.question }}</p>
     <Answer
       v-for="answer in props.answers"
-      :key="answer"
-      :text="answer"
-      :value="createID(answer)"
+      :key="answer.response"
+      :text="answer.response"
+      :value="createID(answer.response)"
+      :captain="answer.captain"
+      @captainupdate="updateAnswer"
     />
-    <button type="submit">Next</button>
+    <button type="submit" @click.prevent="saveData">Next</button>
   </form>
-
-  <!--
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-  -->
 </template>
 
 <style scoped></style>

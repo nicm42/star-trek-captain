@@ -1,7 +1,10 @@
 [
   {
     "question": "What do you call your first officer?",
-    "answers": ["Number One", "My friend", "My enemy"],
-    "captains": ["TNG", "TOS", "DS9"]
+    "answers": [
+      { "response": "Number One", "captain": ["TNG", "SNW"] },
+      { "response": "My friend", "captain": ["TOS"] },
+      { "response": "My enemy", "captain": ["DS9", "VOY", "ENT"] }
+    ]
   }
 ]

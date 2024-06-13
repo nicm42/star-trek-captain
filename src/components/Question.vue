@@ -9,9 +9,9 @@ const props = defineProps({
   lastq: Boolean
 })
 
-const emit = defineEmits(['captaincountupdate'])
+const emits = defineEmits(['captaincountupdate', 'questioncountupdate'])
 
-const currentAnswer = ref(0)
+const currentAnswer = ref()
 
 // For the answers, we have the text we want to display
 // but we also need it to have no spaces or capitals
@@ -25,12 +25,17 @@ function updateAnswer(val) {
 }
 
 function saveData() {
+  // TODO only do something if an answer has been selected
   // Update the captain count
-  emit('captaincountupdate', currentAnswer.value)
-  // Show the next question TODO
+  emits('captaincountupdate', currentAnswer.value)
+  // Show the next question
+  emits('questioncountupdate')
 }
 
 function showCaptain() {
+  // Update the captain count
+  emits('captaincountupdate', currentAnswer.value)
+  // TODO hide question
   console.log('showing captain')
 }
 </script>

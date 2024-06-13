@@ -6,24 +6,18 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['captainupdate'])
-
-function emitCaptain() {
-  emit('captainupdate', props.captain)
-}
 </script>
 
 <template>
-  <div>
-    <input
-      type="radio"
-      name="answer"
-      :value="props.value"
-      :id="props.value"
-      :captain="props.captain"
-      @input="emitCaptain"
-    />
-    <label :for="props.value">{{ props.text }}</label>
-  </div>
+  <input
+    type="radio"
+    name="answer"
+    :value="props.value"
+    :id="props.value"
+    :captain="props.captain"
+    @input="emit('captainupdate', props.captain)"
+  />
+  <label :for="props.value">{{ props.text }}</label>
 </template>
 
 <style scoped></style>

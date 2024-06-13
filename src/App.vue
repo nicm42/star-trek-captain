@@ -46,7 +46,7 @@ function updateCaptainCount(captainArray) {
 
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
-  <p>Answer the questions to find out</p>
+  <p v-show="!winner">Answer the questions to find out</p>
   <!-- TODO show the questions in a random order -->
   <div class="questions" v-for="(question, index) in questions" :key="question">
     <Transition>

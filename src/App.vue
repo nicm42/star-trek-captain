@@ -37,16 +37,31 @@ function updateCaptainCount(captainArray) {
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
   <p>Answer the questions to find out</p>
-  <div v-for="(question, index) in questions" :key="question">
-    <Question
-      v-show="index === questionCount"
-      :="question"
-      :qnumber="index"
-      :lastq="index === Object.keys(questions).length - 1"
-      @questioncountupdate="updateQuestionCount"
-      @captaincountupdate="updateCaptainCount"
-    />
+  <div class="questions" v-for="(question, index) in questions" :key="question">
+    <Transition>
+      <Question
+        v-show="index === questionCount"
+        :="question"
+        :qnumber="index"
+        :lastq="index === Object.keys(questions).length - 1"
+        @questioncountupdate="updateQuestionCount"
+        @captaincountupdate="updateCaptainCount"
+      />
+    </Transition>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.questions {
+  position: relative;
+}
+</style>

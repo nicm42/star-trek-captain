@@ -56,4 +56,8 @@ function showCaptain() {
   </form>
 </template>
 
-<style scoped></style>
+<style scoped>
+form {
+  position: absolute;
+}
+</style>

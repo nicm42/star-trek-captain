@@ -41,7 +41,6 @@ function showCaptain() {
   // hide question if an answer has been selected
   if (currentAnswer.value) {
     showQuestion.value = false
-    console.log('showing captain')
   }
 }
 </script>

@@ -22,6 +22,8 @@ function updateQuestionCount() {
   questionCount.value += 1
 }
 
+const winner = ref()
+
 function updateCaptainCount(captainArray) {
   // Loop through the captainCount object
   // if it's in the captainArray, then update the value
@@ -30,7 +32,14 @@ function updateCaptainCount(captainArray) {
       captainCount.value[item] += 1
     }
   })
-  console.log(captainCount.value)
+  // If that was the last question, calculate which captain has the most answers
+  // if there's more than one winner then it'll choose whichever it finds last
+  // (because it's looking at a ref, it can change order)
+  if (questionCount.value == Object.keys(questions).length - 1) {
+    winner.value = Object.keys(captainCount.value).reduce((a, b) =>
+      captainCount.value[a] > captainCount.value[b] ? a : b
+    )
+  }
 }
 </script>
 
@@ -49,6 +58,9 @@ function updateCaptainCount(captainArray) {
       />
     </Transition>
   </div>
+  <Transition>
+    <p v-show="winner">You are {{ winner }}</p>
+  </Transition>
 </template>
 
 <style scoped>

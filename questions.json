@@ -36,21 +36,20 @@
     "question": "Have you met Spock?",
     "answers": [
       { "response": "Yes", "captain": ["James T Kirk", "Jean-Luc Picard", "Christopher Pike"] },
-      { "response": "No", "captain": ["Benjamin Sisko", "Kathryn Janeway", "Jonathan Archer"] }
+      { "response": "No", "captain": ["Benjamin Sisko", "Kathryn Janeway"] },
+      { "response": "Who is Spock?", "captain": ["Jonathan Archer"] }
     ]
   },
   {
     "question": "Do you follow the Prime Directive?",
     "answers": [
       {
-        "response": "When it suits me",
-        "captain": [
-          "James T Kirk",
-          "Jean-Luc Picard",
-          "Benjamin Sisko",
-          "Kathryn Janeway",
-          "Christopher Pike"
-        ]
+        "response": "Yes, of course",
+        "captain": ["Jean-Luc Picard", "Benjamin Sisko", "Kathryn Janeway"]
+      },
+      {
+        "response": "When it's justified",
+        "captain": ["James T Kirk", "Christopher Pike"]
       },
       { "response": "What's the Prime Directive?", "captain": ["Jonathan Archer"] }
     ]
@@ -58,8 +57,9 @@
   {
     "question": "Which colour do you look best in?",
     "answers": [
-      { "response": "Yellow", "captain": ["James T Kirk", "Jonathan Archer", "Christopher Pike"] },
-      { "response": "Red", "captain": ["Jean-Luc Picard", "Benjamin Sisko", "Kathryn Janeway"] }
+      { "response": "Yellow", "captain": ["James T Kirk", "Christopher Pike"] },
+      { "response": "Red", "captain": ["Jean-Luc Picard", "Benjamin Sisko", "Kathryn Janeway"] },
+      { "response": "Blue", "captain": ["Jonathan Archer"] }
     ]
   },
   {

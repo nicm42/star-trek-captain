@@ -29,7 +29,14 @@ function updateCaptainCount(captainArray) {
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
   <p>Answer the questions to find out</p>
-  <Question :="questions[0]" @captaincountupdate="updateCaptainCount" />
+  <Question
+    v-for="(question, index) in questions"
+    :key="question"
+    :="question"
+    :qnumber="index"
+    :lastq="index === Object.keys(questions).length - 1"
+    @captaincountupdate="updateCaptainCount"
+  />
 </template>
 
 <style scoped></style>

@@ -4,7 +4,9 @@ import Answer from './Answer.vue'
 
 const props = defineProps({
   question: String,
-  answers: Array
+  answers: Array,
+  qnumber: Number,
+  lastq: Boolean
 })
 
 const emit = defineEmits(['captaincountupdate'])
@@ -25,12 +27,17 @@ function updateAnswer(val) {
 function saveData() {
   // Update the captain count
   emit('captaincountupdate', currentAnswer.value)
+  // Show the next question TODO
+}
+
+function showCaptain() {
+  console.log('showing captain')
 }
 </script>
 
 <template>
   <form>
-    <p>{{ props.question }}</p>
+    <p>{{ props.qnumber + 1 }}. {{ props.question }}</p>
     <Answer
       v-for="answer in props.answers"
       :key="answer.response"
@@ -39,7 +46,8 @@ function saveData() {
       :captain="answer.captain"
       @captainupdate="updateAnswer"
     />
-    <button type="submit" @click.prevent="saveData">Next</button>
+    <button type="submit" v-show="!lastq" @click.prevent="saveData">Next</button>
+    <button type="submit" v-show="lastq" @click.prevent="showCaptain">Submit</button>
   </form>
 </template>
 

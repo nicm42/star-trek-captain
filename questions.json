@@ -2,18 +2,105 @@
   {
     "question": "What do you call your first officer?",
     "answers": [
-      { "response": "Number One", "captain": ["TNG", "SNW"] },
-      { "response": "My friend", "captain": ["TOS"] },
-      { "response": "My enemy", "captain": ["DS9", "VOY", "ENT"] }
+      { "response": "Number One", "captain": ["Jean-Luc Picard", "Christopher Pike"] },
+      { "response": "My friend", "captain": ["James T Kirk"] },
+      {
+        "response": "My enemy",
+        "captain": ["Benjamin Sisko", "Kathryn Janeway", "Jonathan Archer"]
+      }
     ]
   },
   {
     "question": "When you want to go to warp, which catchphrase do you use?",
     "answers": [
-      { "response": "Hit it", "captain": ["SNW"] },
-      { "response": "Do it", "captain": ["VOY"] },
-      { "response": "Engage", "captain": ["TNG"] },
-      { "response": "I don't use a catchphrase", "captain": ["TOS", "DS9", "ENT"] }
+      { "response": "Hit it", "captain": ["Christopher Pike"] },
+      { "response": "Do it", "captain": ["Kathryn Janeway"] },
+      { "response": "Engage", "captain": ["Jean-Luc Picard"] },
+      {
+        "response": "I don't use a catchphrase",
+        "captain": ["James T Kirk", "Benjamin Sisko", "Jonathan Archer"]
+      }
+    ]
+  },
+  {
+    "question": "What is your specialist subject?",
+    "answers": [
+      { "response": "Women", "captain": ["James T Kirk"] },
+      { "response": "Archeology", "captain": ["Jean-Luc Picard"] },
+      { "response": "Religion", "captain": ["Benjamin Sisko"] },
+      { "response": "Science", "captain": ["Kathryn Janeway"] },
+      { "response": "Flying", "captain": ["Christopher Pike", "Jonathan Archer"] }
+    ]
+  },
+  {
+    "question": "Have you met Spock?",
+    "answers": [
+      { "response": "Yes", "captain": ["James T Kirk", "Jean-Luc Picard", "Christopher Pike"] },
+      { "response": "No", "captain": ["Benjamin Sisko", "Kathryn Janeway", "Jonathan Archer"] }
+    ]
+  },
+  {
+    "question": "Do you follow the Prime Directive?",
+    "answers": [
+      {
+        "response": "When it suits me",
+        "captain": [
+          "James T Kirk",
+          "Jean-Luc Picard",
+          "Benjamin Sisko",
+          "Kathryn Janeway",
+          "Christopher Pike"
+        ]
+      },
+      { "response": "What's the Prime Directive?", "captain": ["Jonathan Archer"] }
+    ]
+  },
+  {
+    "question": "Which colour do you look best in?",
+    "answers": [
+      { "response": "Yellow", "captain": ["James T Kirk", "Jonathan Archer", "Christopher Pike"] },
+      { "response": "Red", "captain": ["Jean-Luc Picard", "Benjamin Sisko", "Kathryn Janeway"] }
+    ]
+  },
+  {
+    "question": "What's your favourite drink?",
+    "answers": [
+      { "response": "Coffee", "captain": ["Kathryn Janeway"] },
+      { "response": "Raktajino", "captain": ["Benjamin Sisko"] },
+      { "response": "Tea", "captain": ["Jean-Luc Picard"] },
+      { "response": "Sweet tea", "captain": ["Jonathan Archer"] },
+      { "response": "Saurian brandy", "captain": ["James T Kirk"] },
+      { "response": "Wine", "captain": ["Christopher Pike"] }
+    ]
+  },
+  {
+    "question": "What's your favourite method of problem solving?",
+    "answers": [
+      { "response": "Diplomacy", "captain": ["Jean-Luc Picard", "Christopher Pike"] },
+      { "response": "Science", "captain": ["Kathryn Janeway"] },
+      { "response": "Shooting", "captain": ["James T Kirk", "Benjamin Sisko"] },
+      { "response": "Wading in and hoping for the best", "captain": ["Jonathan Archer"] }
+    ]
+  },
+  {
+    "question": "How do you feel about the prospect of being promoted to Admiral?",
+    "answers": [
+      {
+        "response": "It's about time",
+        "captain": ["Jean-Luc Picard", "Kathryn Janeway", "Jonathan Archer"]
+      },
+      { "response": "I'm happier staying as a captain", "captain": ["James T Kirk"] },
+      {
+        "response": "I can't imagine it ever happening",
+        "captain": ["Benjamin Sisko", "Jonathan Archer"]
+      }
+    ]
+  },
+  {
+    "question": "How is/was your relationship with your father?",
+    "answers": [
+      { "response": "Great", "captain": ["Benjamin Sisko", "Kathryn Janeway", "Jonathan Archer"] },
+      { "response": "Strained", "captain": ["James T Kirk", "Jean-Luc Picard", "Christopher Pike"] }
     ]
   }
 ]

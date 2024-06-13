@@ -7,12 +7,12 @@ import questions from '../questions.json'
 const captainCount = ref({})
 
 captainCount.value = {
-  TOS: 0,
-  TNG: 0,
-  DS9: 0,
-  VOY: 0,
-  ENT: 0,
-  SNW: 0
+  'James T Kirk': 0,
+  'Jean-Luc Picard': 0,
+  'Benjamin Sisko': 0,
+  'Kathryn Janeway': 0,
+  'Jonathan Archer': 0,
+  'Christopher Pike': 0
 }
 
 // Keep track of which question we're on
@@ -36,6 +36,7 @@ function updateCaptainCount(captainArray) {
   // if there's more than one winner then it'll choose whichever it finds last
   // (because it's looking at a ref, it can change order)
   if (questionCount.value == Object.keys(questions).length - 1) {
+    console.log(captainCount.value)
     winner.value = Object.keys(captainCount.value).reduce((a, b) =>
       captainCount.value[a] > captainCount.value[b] ? a : b
     )
@@ -46,6 +47,7 @@ function updateCaptainCount(captainArray) {
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
   <p>Answer the questions to find out</p>
+  <!-- TODO show the questions in a random order -->
   <div class="questions" v-for="(question, index) in questions" :key="question">
     <Transition>
       <Question

@@ -25,18 +25,21 @@ function updateAnswer(val) {
 }
 
 function saveData() {
-  // TODO only do something if an answer has been selected
-  // Update the captain count
-  emits('captaincountupdate', currentAnswer.value)
-  // Show the next question
-  emits('questioncountupdate')
+  // only do something if an answer has been selected
+  if (currentAnswer.value) {
+    // Update the captain count
+    emits('captaincountupdate', currentAnswer.value)
+    // Show the next question
+    emits('questioncountupdate')
+  }
 }
 
 function showCaptain() {
-  // Update the captain count
-  emits('captaincountupdate', currentAnswer.value)
-  // TODO hide question
-  console.log('showing captain')
+  saveData()
+  // hide question if an answer has been selected
+  if (currentAnswer.value) {
+    console.log('showing captain')
+  }
 }
 </script>
 

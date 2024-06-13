@@ -3,6 +3,12 @@ import { ref } from 'vue'
 import Question from './components/Question.vue'
 import questions from '../questions.json'
 
+// Randomise the order of the questions
+const randomQuestions = questions
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
 // Captains chosen with their counts
 const captainCount = ref({})
 
@@ -48,7 +54,7 @@ function updateCaptainCount(captainArray) {
   <h1>Which Star Trek Captain Are You?</h1>
   <p v-show="!winner">Answer the questions to find out</p>
   <!-- TODO show the questions in a random order -->
-  <div class="questions" v-for="(question, index) in questions" :key="question">
+  <div class="questions" v-for="(question, index) in randomQuestions" :key="question">
     <Transition>
       <Question
         v-show="index === questionCount"

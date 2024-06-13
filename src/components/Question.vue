@@ -13,6 +13,8 @@ const emits = defineEmits(['captaincountupdate', 'questioncountupdate'])
 
 const currentAnswer = ref()
 
+const showQuestion = ref(true)
+
 // For the answers, we have the text we want to display
 // but we also need it to have no spaces or capitals
 // for the ID and for the value
@@ -38,13 +40,14 @@ function showCaptain() {
   saveData()
   // hide question if an answer has been selected
   if (currentAnswer.value) {
+    showQuestion.value = false
     console.log('showing captain')
   }
 }
 </script>
 
 <template>
-  <form>
+  <form v-show="showQuestion">
     <p>{{ props.qnumber + 1 }}. {{ props.question }}</p>
     <Answer
       v-for="answer in props.answers"

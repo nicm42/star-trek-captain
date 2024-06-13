@@ -48,12 +48,18 @@ function updateCaptainCount(captainArray) {
     )
   }
 }
+
+function getWinnerImage() {
+  // Find name of relevant image - which is just the surname with no capitals
+  const winnerArr = winner.value.split(' ')
+  const winnerImageName = winnerArr[winnerArr.length - 1].toLowerCase()
+  return `./captains/${winnerImageName}.jpg`
+}
 </script>
 
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
   <p v-show="!winner">Answer the questions to find out</p>
-  <!-- TODO show the questions in a random order -->
   <div class="questions" v-for="(question, index) in randomQuestions" :key="question">
     <Transition>
       <Question
@@ -67,7 +73,10 @@ function updateCaptainCount(captainArray) {
     </Transition>
   </div>
   <Transition>
-    <p v-show="winner">You are {{ winner }}</p>
+    <div v-if="winner">
+      <p>You are {{ winner }}</p>
+      <img :src="getWinnerImage()" :alt="winner" />
+    </div>
   </Transition>
 </template>
 

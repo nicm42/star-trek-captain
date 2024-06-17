@@ -20,12 +20,16 @@ body {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  display: grid;
+html {
   background-image: url('./assets/starfleet.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  display: grid;
   position: relative;
 }
 
@@ -38,7 +42,9 @@ body::before {
 
 #app {
   max-width: 1280px;
-  margin: auto;
+  margin-block: 2rem;
+  margin-inline: auto;
+  max-height: 100%;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 8px;

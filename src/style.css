@@ -1,0 +1,55 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  --starfleet-blue: hsl(192, 100%, 44%);
+  --starfleet-blue-hover: hsl(192, 100%, 74%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-image: url('./assets/starfleet.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  display: grid;
+}
+
+#app {
+  max-width: 1280px;
+  margin-block: 2rem;
+  margin-inline: auto;
+  max-height: 100%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.67);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  #app {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}

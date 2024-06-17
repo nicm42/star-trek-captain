@@ -37,7 +37,7 @@ input::after {
 }
 
 input::before {
-  border: 1px solid #213547;
+  border: 1px solid #ffffff;
   width: 1rem;
   left: 0;
 }
@@ -57,5 +57,11 @@ input:checked::after {
 
 label {
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  input::before {
+    border: 1px solid #213547;
+  }
 }
 </style>

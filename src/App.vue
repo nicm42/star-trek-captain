@@ -115,8 +115,14 @@ h1 {
   opacity: 0;
 }
 
-.winner-text {
+.winner {
   font-size: 2rem;
   text-align: center;
+}
+
+.winner img {
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
 }
 </style>

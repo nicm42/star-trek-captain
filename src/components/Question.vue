@@ -48,14 +48,16 @@ function showCaptain() {
 <template>
   <form v-show="showQuestion">
     <p>{{ props.qnumber + 1 }}. {{ props.question }}</p>
-    <Answer
-      v-for="answer in props.answers"
-      :key="answer.response"
-      :text="answer.response"
-      :value="createID(answer.response)"
-      :captain="answer.captain"
-      @captainupdate="updateAnswer"
-    />
+    <div class="answers">
+      <Answer
+        v-for="answer in props.answers"
+        :key="answer.response"
+        :text="answer.response"
+        :value="createID(answer.response)"
+        :captain="answer.captain"
+        @captainupdate="updateAnswer"
+      />
+    </div>
     <button type="submit" v-show="!lastq" @click.prevent="saveData">Next</button>
     <button type="submit" v-show="lastq" @click.prevent="showCaptain">Submit</button>
   </form>
@@ -68,7 +70,14 @@ function showCaptain() {
   z-index: 99;
 }
 
+.answers {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+}
+
 button {
+  margin-top: 1rem;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;

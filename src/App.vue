@@ -74,13 +74,13 @@ function getWinnerImage() {
         />
       </Transition>
     </div>
+    <Transition>
+      <div v-if="winner" class="winner">
+        <p>You are {{ winner }}</p>
+        <img :src="getWinnerImage()" :alt="winner" />
+      </div>
+    </Transition>
   </div>
-  <Transition>
-    <div v-if="winner" class="winner">
-      <p>You are {{ winner }}</p>
-      <img :src="getWinnerImage()" :alt="winner" />
-    </div>
-  </Transition>
 </template>
 
 <style scoped>
@@ -99,7 +99,8 @@ h1 {
   display: grid;
 }
 
-.questions {
+.questions,
+.winner {
   grid-column: 1;
   grid-row: 1;
 }

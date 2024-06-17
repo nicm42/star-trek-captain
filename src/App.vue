@@ -62,17 +62,14 @@ function getWinnerImage() {
   <p class="subtitle" v-show="!winner">Answer the questions to find out</p>
   <div class="questions-container">
     <div class="questions" v-for="(question, index) in randomQuestions" :key="question">
-      <Transition>
-        <Question
-          v-show="index === questionCount"
-          :class="{ showing: index === questionCount }"
-          :="question"
-          :qnumber="index"
-          :lastq="index === Object.keys(questions).length - 1"
-          @questioncountupdate="updateQuestionCount"
-          @captaincountupdate="updateCaptainCount"
-        />
-      </Transition>
+      <Question
+        :class="{ showing: index === questionCount }"
+        :="question"
+        :qnumber="index"
+        :lastq="index === Object.keys(questions).length - 1"
+        @questioncountupdate="updateQuestionCount"
+        @captaincountupdate="updateCaptainCount"
+      />
     </div>
     <Transition>
       <div v-if="winner" class="winner">

@@ -64,9 +64,20 @@ function showCaptain() {
 </template>
 
 <style scoped>
-/* Make sure the current question is at the top */
-.showing {
+form {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 250ms ease-in,
+    visibility 0ms ease-in 250ms;
+}
+
+form.showing {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0ms;
   position: relative;
+  /* Make sure the current question is at the top */
   z-index: 99;
 }
 

@@ -27,7 +27,7 @@ Having done a quiz at work I wondered if using Vue would make changing between t
 
 ## Setup
 
-To view this project visit the demo TBC or download the files, open a terminal in that folder and install locally using npm:
+To view this project visit the [demo](https://star-trek-captain.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
 
 ```
 npm install

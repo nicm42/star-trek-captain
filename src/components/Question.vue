@@ -62,7 +62,30 @@ function showCaptain() {
 </template>
 
 <style scoped>
-form {
-  position: absolute;
+/* Make sure the current question is at the top */
+.showing {
+  position: relative;
+  z-index: 99;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #213547;
+  background-color: var(--starfleet-blue);
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+button:hover {
+  background-color: var(--starfleet-blue-hover);
+}
+button:focus,
+button:focus-visible {
+  background-color: var(--starfleet-blue-hover);
+  outline: 4px auto -webkit-focus-ring-color;
 }
 </style>

@@ -59,21 +59,24 @@ function getWinnerImage() {
 
 <template>
   <h1>Which Star Trek Captain Are You?</h1>
-  <p v-show="!winner">Answer the questions to find out</p>
-  <div class="questions" v-for="(question, index) in randomQuestions" :key="question">
-    <Transition>
-      <Question
-        v-show="index === questionCount"
-        :="question"
-        :qnumber="index"
-        :lastq="index === Object.keys(questions).length - 1"
-        @questioncountupdate="updateQuestionCount"
-        @captaincountupdate="updateCaptainCount"
-      />
-    </Transition>
+  <p class="subtitle" v-show="!winner">Answer the questions to find out</p>
+  <div class="questions-container">
+    <div class="questions" v-for="(question, index) in randomQuestions" :key="question">
+      <Transition>
+        <Question
+          v-show="index === questionCount"
+          :class="{ showing: index === questionCount }"
+          :="question"
+          :qnumber="index"
+          :lastq="index === Object.keys(questions).length - 1"
+          @questioncountupdate="updateQuestionCount"
+          @captaincountupdate="updateCaptainCount"
+        />
+      </Transition>
+    </div>
   </div>
   <Transition>
-    <div v-if="winner">
+    <div v-if="winner" class="winner">
       <p>You are {{ winner }}</p>
       <img :src="getWinnerImage()" :alt="winner" />
     </div>
@@ -81,6 +84,27 @@ function getWinnerImage() {
 </template>
 
 <style scoped>
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.questions-container {
+  display: grid;
+}
+
+.questions {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Vue transition */
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
@@ -90,7 +114,9 @@ function getWinnerImage() {
 .v-leave-to {
   opacity: 0;
 }
-.questions {
-  position: relative;
+
+.winner-text {
+  font-size: 2rem;
+  text-align: center;
 }
 </style>
